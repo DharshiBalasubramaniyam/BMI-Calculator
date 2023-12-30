@@ -1,5 +1,6 @@
 package com.example.bmicalculator
 
+
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -11,14 +12,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun OptionButton(text: String, onclick: () -> Unit) {
+fun RowScope.OptionButton(text: String, onClick: () -> Unit) {
     Button(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(10.dp),
         onClick = {
-            onclick()
-        }
+            onClick()
+        },
+        modifier = Modifier
+            .padding(10.dp)
+            .fillMaxWidth()
+            .weight(0.5f),
     ) {
         Text(
             text = text,
