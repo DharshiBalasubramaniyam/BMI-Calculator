@@ -12,11 +12,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun InputTextField(value: String, onValueChange: () -> Unit, imeAction: ImeAction) {
+fun InputTextField(value: String, onValueChange: (String) -> Unit, imeAction: ImeAction) {
     BasicTextField(
         value = value,
         onValueChange = {
-            onValueChange()
+            onValueChange(it)
         },
         textStyle = TextStyle(
             fontSize = 45.sp,
